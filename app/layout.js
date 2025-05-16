@@ -13,11 +13,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.className}`}
       >
+        <ClerkProvider
+    publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+    >
          <ThemeProvider
             attribute="class"
             defaultTheme="dark"
@@ -35,8 +38,8 @@ export default function RootLayout({ children }) {
             </footer>
            
           </ThemeProvider>
+    </ClerkProvider>
       </body>
     </html>
-    </ClerkProvider>
   );
 }
