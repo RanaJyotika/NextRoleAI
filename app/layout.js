@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,6 +21,9 @@ export default function RootLayout({ children }) {
       >
         <ClerkProvider
     publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+    appearance={{
+      baseTheme: dark,
+    }}
     >
          <ThemeProvider
             attribute="class"
