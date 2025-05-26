@@ -1,12 +1,13 @@
-import { inngest } from "./client";
-import prisma from "@/lib/prisma"; // or wherever your Prisma is
+import { inngest } from "@/lib/inngest/client";
+import { generateIndustryInsights } from "@/lib/inngest/functions";
+import { serve } from "inngest/next";
 
-export const generateIndustryInsights = inngest.createFunction(
-  { id: "generate-industry-insights" },
-  { event: "insights/generate" },
-  async ({ event, step }) => {
-    // ✅ all Prisma or DB calls should be here
-    const data = await prisma.user.findMany();
-    return { success: true };
-  }
-);
+
+// Create an API that serves zero functions
+export const { GET, POST, PUT } = serve({
+  client: inngest,
+  functions: [
+    /* your functions will be passed here later! */
+    generateIndustryInsights
+  ],
+});
