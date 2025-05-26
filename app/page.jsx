@@ -1,12 +1,12 @@
 import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { features } from "./data/features";
-import { howItWorks } from "./data/howItWorks";
-import { testimonial } from "./data/testimonial";
+import { features } from "../data/features";
+import { howItWorks } from "../data/howItWorks";
+import { testimonial } from "../data/testimonial";
 import Image from "next/image";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { faqs } from "./data/faqs";
+import { faqs } from "../data/faqs";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
